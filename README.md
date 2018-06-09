@@ -1,12 +1,15 @@
 # Postgres HA Sandbox
 
 ## Intro
+    
 
- * https://www.postgresql.org/docs/10/static/high-availability.html
- * The above doc is hard to read since the concepts are spread over many chapters
- * Simple step-by-step guide for PG10: https://blog.raveland.org/post/postgresql_sr/
- * The best thing Postgres builtin tech can do is streaming replication to a hot standby
- * Record-based log shipping is a synonym for streaming replication
+ * This repository provides a pre-made postgresql 10 streaming replication, hot-standby cluster for your high-availability experiments
+ * It is based on the very well-written guide in https://blog.raveland.org/post/postgresql_sr/
+ * For a complete overview of postgres HA options, visit https://www.postgresql.org/docs/10/static/high-availability.html
+
+## Sample Database
+
+ * The cluster will be loaded with the pgfoundry dellstore2 sample database, available from http://pgfoundry.org/frs/?group_id=1000150&release_id=376
 
 ## Troubleshooting
 
@@ -20,7 +23,7 @@ If it isn't the system identifiers don't match up and the slave refuses to start
 
 These identifiers are randomly chosen at DB creation time
     
-### basebackup
+### basebackup notes
 
 The -D option designates the local directory, the whole remote cluster will be restored to this location.
 
@@ -34,3 +37,7 @@ The -D option designates the local directory, the whole remote cluster will be r
            1 |       14 | XXXX  | PENELOPE GUINESS | 25.99 |       0 |           1976
     (1 row)
 
+## Todo
+
+ * document failover
+ * document failback
