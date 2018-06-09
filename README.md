@@ -12,6 +12,26 @@
  * The cluster will be loaded with the pgfoundry dellstore2 sample database, available from http://pgfoundry.org/frs/?group_id=1000150&release_id=376
  * to connect, `vagrant ssh pgcluster01` then `sudo -i -u postgres psql dellstore2`
 
+## Verifiy
+
+Updates to the master should show up in little time on the slave. Execute e.g.:
+
+    postgres@pgcluster01:~$ psql dellstore2 -c "update products set title = 'MY_NEW_TITLE' where prod_id = 1"
+    UPDATE 1
+
+And verify shortly after with:
+
+    postgres@pgcluster02:~$  psql dellstore2 -c 'select * from products where prod_id = 1'
+     prod_id | category |    title     |      actor       | price | special | common_prod_id 
+    ---------+----------+--------------+------------------+-------+---------+----------------
+           1 |       14 | MY_NEW_TITLE | PENELOPE GUINESS | 25.99 |       0 |           1976
+
+
+
+
+
+
+
 ## Troubleshooting
 
 ### Identifier Mismatch
