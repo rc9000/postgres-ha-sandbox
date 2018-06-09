@@ -6,6 +6,7 @@
  * This repository provides a vagrant-based pre-made postgresql 10 streaming replication, hot-standby two node cluster for your own high-availability experiments
  * It is based on the very well-written guide in https://blog.raveland.org/post/postgresql_sr/
  * For a complete overview of postgres HA options, visit https://www.postgresql.org/docs/10/static/high-availability.html
+ * The `Vagrantfile` will launch two nodes, `pglcuster01` (Master) and `pgcluster02` (Slave)
 
 ## Sample Database
 
