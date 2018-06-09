@@ -1,15 +1,16 @@
-# Postgres HA Sandbox
+# Postgres 10 HA Sandbox
 
 ## Intro
     
 
- * This repository provides a pre-made postgresql 10 streaming replication, hot-standby cluster for your high-availability experiments
+ * This repository provides a vagrant-based pre-made postgresql 10 streaming replication, hot-standby two node cluster for your own high-availability experiments
  * It is based on the very well-written guide in https://blog.raveland.org/post/postgresql_sr/
  * For a complete overview of postgres HA options, visit https://www.postgresql.org/docs/10/static/high-availability.html
 
 ## Sample Database
 
  * The cluster will be loaded with the pgfoundry dellstore2 sample database, available from http://pgfoundry.org/frs/?group_id=1000150&release_id=376
+ * to connect, `vagrant ssh pgcluster01` then `sudo -i -u postgres psql dellstore2`
 
 ## Troubleshooting
 
